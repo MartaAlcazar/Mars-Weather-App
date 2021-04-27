@@ -1,0 +1,944 @@
+@import 'lib/vars';
+@import 'lib/mixins';
+@import 'lib/reboot';
+@import 'lib/fontawesome/font-awesome';
+@import 'lib/fontface';
+@import 'lib/keyframes';
+
+
+
+* {
+  // border: 1px solid pink;
+}
+
+
+//MAIN
+
+body {}
+
+.app {
+
+  background-image: url(./../img/archivo-background-17.png);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+
+
+  .container {
+
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 11rem auto;
+    grid-template-columns: auto 1rem 1rem 13rem;
+
+
+    header {
+      grid-row: 1 /span 1;
+      grid-column: 1/span 4;
+      display: flex;
+      justify-content: space-between;
+
+      .day_status {
+        color: white;
+        margin: 0;
+        padding: 1.2rem 1.5rem;
+
+        .day {
+          margin: 0;
+          font-size: 1.7rem;
+          font-weight: 400;
+
+        }
+
+        @media screen and (min-width: 500px) {
+
+          .day {
+            font-size: 2.5em;
+
+          }
+        }
+
+        .weather_status {
+          margin: -.4rem 0 0 0;
+          font-size: 1.3rem;
+          font-weight: 400;
+
+        }
+
+        @media screen and (min-width: 500px) {
+
+          .weather_status {
+            font-size: 1.8rem;
+
+          }
+        }
+
+        .weather_icon {
+          padding-top: .5rem;
+          margin-left: -.5rem;
+
+          img {
+            width: 5rem;
+
+
+          }
+
+          @media screen and (min-width: 500px) {
+
+            img {
+              width: 8rem;
+
+            }
+          }
+        }
+      }
+
+
+      .buddy_button {
+        padding: 1rem;
+
+        a {
+          img {
+            width: 3.5rem;
+            height: auto;
+          }
+
+          @media screen and (min-width: 500px) {
+
+            img {
+              width: 5rem;
+
+            }
+          }
+        }
+      }
+
+
+
+    }
+
+    main {
+      grid-row: 2 /span 1;
+      grid-column: 1/span 4;
+
+      display: grid;
+      grid-template-rows: 4rem auto auto 9rem;
+      grid-template-columns: auto auto auto 13rem;
+
+
+
+      .air_temperature {
+        grid-row: 1 /span 1;
+        grid-column: 4/span 1;
+        color: white;
+        padding-right: 1.5rem;
+        text-align: right;
+
+        display: flex;
+        flex-direction: column;
+
+
+        .range_air_temperature {
+          color: rgba(255, 255, 255, 0.6);
+          padding-right: .2rem;
+
+        }
+
+        @media screen and (min-width: 500px) {
+
+          .range_air_temperature {
+            font-size: 1.5rem;
+
+          }
+        }
+
+        .current_air_temperature {
+          font-weight: 200;
+          font-size: 6rem;
+
+          line-height: 1;
+          text-align: end;
+
+        }
+
+        @media screen and (min-width: 500px) {
+
+          .current_air_temperature {
+            font-size: 8rem;
+
+          }
+        }
+      }
+
+
+      .ground_temperature {
+        grid-row: 4 /span 1;
+        grid-column: 1/span 1;
+        display: flex;
+        flex-direction: column-reverse;
+        color: white;
+        margin: 1.2rem 1.5rem;
+
+
+        .range_ground_temperature {
+          color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media screen and (min-width: 500px) {
+
+          .range_ground_temperature {
+            font-size: 1.5rem;
+
+          }
+        }
+
+        .current_ground_temperature {
+          font-weight: 200;
+          font-size: 6rem;
+          line-height: 1;
+
+
+        }
+
+        @media screen and (min-width: 500px) {
+
+          .current_ground_temperature {
+            font-size: 8rem;
+
+          }
+        }
+      }
+
+      @media screen and (max-width: 390px) {
+
+        .ground_temperature {
+          grid-column: 1/span 3;
+          ;
+        }
+
+      }
+
+      .archive_button {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column;
+
+        grid-row: 4 /span 1;
+        grid-column: 4/span 1;
+
+        .save_button {
+          font-size: 2.5rem;
+          margin: .2rem 1.6rem .7rem 1rem;
+          color: white;
+          line-height: .5rem;
+        }
+
+        @media screen and (min-width: 500px) {
+
+          .save_button {
+            font-size: 4rem;
+
+          }
+        }
+
+        .save_check {
+          font-size: 2.5rem;
+          margin: .2rem 1.6rem .7rem 1rem;
+          color: white;
+          line-height: .5rem;
+        }
+
+        @media screen and (min-width: 500px) {
+
+          .save_check {
+            font-size: 4rem;
+
+          }
+        }
+
+        .hidden_save {
+          display: none;
+        }
+
+        a {
+          font-size: 2.8rem;
+          margin: .2rem 1.6rem;
+          color: white;
+        }
+
+        @media screen and (min-width: 500px) {
+
+          a {
+            font-size: 4rem;
+
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: 500px) {
+
+      main {
+        grid-template-columns: auto auto auto 18rem;
+      }
+
+    }
+
+    @media screen and (max-width: 390px) {
+
+      main {
+        grid-template-columns: 9rem 1rem 1rem 13rem;
+      }
+
+    }
+
+  }
+
+  @media screen and (max-width: 390px) {
+
+    .container {
+      grid-template-columns: 12.5rem 1rem 1rem 9rem;
+    }
+
+  }
+
+
+
+
+
+
+
+  // BUDDY 
+
+
+  .buddy_container {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 11rem auto;
+    grid-template-columns: auto auto auto auto;
+
+    .buddy_header {
+      grid-row: 1 /span 1;
+      grid-column: 1/span 4;
+      display: flex;
+      justify-content: space-between;
+
+
+      .day_status {
+        color: white;
+        margin: 0;
+        padding: 1.2rem 1.5rem;
+
+        .day {
+          margin: 0;
+          font-size: 1.7rem;
+          font-weight: 400;
+
+        }
+
+        @media screen and (min-width: 500px) {
+
+          .day {
+            font-size: 2.5em;
+
+          }
+        }
+
+        .weather_status {
+          margin: -.4rem 0 0 0;
+          font-size: 1.3rem;
+          font-weight: 400;
+
+        }
+
+        @media screen and (min-width: 500px) {
+
+          .weather_status {
+            font-size: 1.8rem;
+
+          }
+        }
+
+
+        .weather_icon {
+          padding-top: .5rem;
+          margin-left: -.5rem;
+
+          img {
+            width: 5rem;
+
+
+          }
+
+          @media screen and (min-width: 500px) {
+
+            img {
+              width: 6rem;
+
+            }
+          }
+        }
+
+      }
+
+      .close_button {
+        padding: 1.5rem;
+
+        a {
+          color: white;
+          font-size: 2rem;
+
+
+          .iconify {}
+        }
+
+        @media screen and (min-width: 500px) {
+          a {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+
+  .buddy_main_container {
+    margin-top: .8rem;
+
+  }
+
+  @media screen and (min-width: 500px) {
+    .buddy_main_container {
+      margin-bottom: 5rem;
+      display: flex;
+      align-items: flex-end;
+
+    }
+  }
+
+  .buddy_main {
+
+
+    .dialy_info {
+      color: white;
+
+      .main_info {
+        padding: 1rem;
+        margin: .5rem 1.5rem 1rem 1.5rem;
+        background-color: rgba(255, 255, 255, 0.25);
+        border-radius: 10px;
+
+        .did_you_know {
+          font-size: .8rem;
+          font-weight: 400;
+        }
+
+        @media screen and (min-width: 500px) {
+          .did_you_know {
+            font-size: 1.2rem;
+            padding-top: 1.2rem;
+          }
+        }
+
+        .info_title {
+          font-size: 1.4rem;
+          font-weight: 500;
+          line-height: 1.5rem;
+          margin: .5rem 0;
+        }
+
+        @media screen and (min-width: 500px) {
+          .info_title {
+            font-size: 1.8rem;
+            line-height: 2rem;
+            margin: .9rem 0;
+
+
+          }
+        }
+
+        .info_content {
+          font-size: .8rem;
+
+          font-weight: 400;
+          margin: 0;
+
+        }
+
+        @media screen and (min-width: 500px) {
+          .info_content {
+            font-size: 1.2rem;
+            padding-bottom: 1.2rem;
+          }
+        }
+
+      }
+
+      @media screen and (min-width: 500px) {
+        .main_info {
+          padding: 0 1.7rem;
+        }
+      }
+
+      .secondary_info {
+        padding: 1rem;
+        margin: 0 1.5rem;
+
+        background-color: rgba(255, 255, 255, 0.25);
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: space-around;
+
+        font-size: .9rem;
+        text-align: center;
+
+        .wind_speed {
+          .wind_speed_title {
+            font-weight: 400;
+          }
+
+          .wind_speed_data {
+            font-weight: 700;
+          }
+        }
+
+        .air_pressure {
+          .air_pressure_title {
+            font-weight: 400;
+          }
+
+          .air_pressure_data {
+            font-weight: 700;
+            text-transform: uppercase;
+
+          }
+        }
+
+        .solar_radiation {
+          .solar_radiation_title {
+            font-weight: 400;
+          }
+
+          .solar_radiation_data {
+            font-weight: 700;
+            text-transform: uppercase;
+
+          }
+
+        }
+
+
+      }
+
+      @media screen and (min-width: 500px) {
+        .secondary_info {
+          font-size: 1.2rem;
+        }
+      }
+
+      .triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 50px 70px 0 0;
+        border-color: #ffffff35 transparent transparent transparent;
+        position: relative;
+        left: 14rem;
+      }
+
+      .buddy_illustration {
+        img {
+          width: 6rem;
+          margin-left: 6rem;
+        }
+
+        @media screen and (min-width: 500px) {
+          img {
+            width: 7rem;
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: 500px) {
+      .dialy_info {
+        margin: 0 2rem;
+
+      }
+    }
+  }
+
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .app {
+    background-color: #e4a77f;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+}
+
+// ARCHIVE
+
+.archive_container_hidden {
+  display: none;
+}
+
+.archive_overlay {
+  z-index: 20;
+  // background-image: url(./../img/archivo-background-17.png);
+  position: fixed;
+
+}
+
+.container_archive {
+
+  // overflow: hidden;
+  display: flex;
+  // background-image: url(./../img/archivo-background-17.png);
+  justify-content: flex-end;
+
+
+
+  main {
+    color: white;
+    position: fixed;
+    overflow-y: scroll;
+    top: 0rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(./../img/archivo-background-18.png);
+    height: 100%;
+    background-size: cover;
+
+    .close_header {
+      //     height: 1rem;
+      //     background-color: blue;
+      //   position: absolute;
+      //   width: 100%;
+      // top:0;
+      // left:0; 
+
+    }
+
+    .close_button {
+      position: fixed;
+      top: -.2rem;
+      padding: 1rem 1rem .5rem 1rem;
+      font-size: 1.7rem;
+      width: 100%;
+      background: linear-gradient(180deg, #DB7654 88.02%, rgba(219, 119, 85, 0.56) 94.79%, rgba(219, 119, 85, 0) 100%);
+      ;
+      z-index: 100;
+
+      a {
+        color: white;
+
+        span {}
+      }
+    }
+
+    @media screen and (min-width: 500px) {
+      .close_button {
+        font-size: 2rem;
+        padding: 1.3rem 1rem .5rem 1rem;
+
+
+
+      }
+    }
+
+    .todo_archivo {
+      padding-top: 3rem;
+    }
+
+
+
+    .archive_component {
+
+      display: flex;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      justify-content: space-between;
+      margin: .5rem .8rem;
+      padding: .5rem;
+
+      .archive_data {
+        padding: 0 .5rem;
+
+        .archive_date {
+          font-weight: 400;
+          margin: 0;
+          font-size: 2rem;
+
+        }
+
+        @media screen and (min-width: 500px) {
+          .archive_date {
+            font-size: 2.5rem;
+
+
+          }
+        }
+
+        .archive_weather_status {
+          width: auto;
+          margin-left: -.3rem;
+          max-height: 50px;
+        }
+
+        @media screen and (min-width: 500px) {
+          .archive_weather_status {
+            max-height: 70px;
+
+
+          }
+        }
+      }
+
+      .archive_temperature {
+        padding: 0rem;
+
+        font-weight: 200;
+        font-size: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        line-height: .3rem;
+        align-items: flex-end;
+        margin-bottom: -.8rem;
+
+        .air_archive_temp {}
+
+        .ground_archive_temp {}
+
+      }
+
+      @media screen and (min-width: 500px) {
+        .archive_temperature {
+          font-size: 1.8rem;
+
+        }
+      }
+
+      .deleteS {
+         padding: .5rem .4rem;
+
+        .iconify {
+          padding: 0;
+          font-size: 1.5rem;
+
+
+        }
+
+        @media screen and (min-width: 500px) {
+          .iconify {
+            font-size: 1.7rem;
+
+
+          }
+        }
+      }
+
+      .deleteP{
+
+         
+          margin: .5rem .4rem;
+          font-size: 1.5rem;
+
+        
+
+        
+      }
+      @media screen and (min-width: 500px) {
+        .deleteP {
+          font-size: 1.7rem;
+
+
+        }
+      }
+    }
+
+    @media screen and (min-width: 500px) {
+      .archive_component {
+        margin: 1rem 1.2rem;
+        padding: .8rem;
+      }
+    }
+
+    .day_record_hidden {
+      display: none;
+    }
+  }
+}
+
+// BACKGROUNDS
+.sunny_background {
+  background-image: url(../img/desktop-background-sunny.png);
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .sunny_background {
+    background-image: url(../img/background-sunny.png);
+
+  }
+}
+
+.windy_background {
+  background-image: url(../img/desktop-background-windy.png);
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .windy_background {
+    background-image: url(../img/background-windy.png);
+
+  }
+}
+
+.cloudy_background {
+  background-image: url(../img/desktop-background-cloudy.png);
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .cloudy_background {
+    background-image: url(../img/background-cloudy.png);
+
+  }
+}
+
+.sandstorm_background {
+  background-image: url(../img/desktop-background-sandstorm.png);
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .sandstorm_background {
+    background-image: url(../img/background-sandstorm.png);
+
+  }
+}
+
+//ALERTS
+.hidden_alert {
+  display: none;
+}
+
+.alert_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+
+  .saved_alert {
+    width: 200px; //300px
+    height: 70px; //200px
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -35px;
+    margin-left: -100px;
+    background-color: #686868;
+    border-radius: 10px;
+    text-align: center;
+
+
+    p {
+      padding: 1.5rem 2.8rem 1.5rem 2.8rem;
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 400;
+      color: white;
+
+
+    }
+  }
+}
+
+.hidden_delete {
+  display: none;
+}
+
+.delete_alert_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+
+  .delete_alert {
+    width: 250px; //300px
+    height: 140px; //200px
+    z-index: 50;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -70px;
+    margin-left: -125px;
+    background-color: #686868;
+    border-radius: 10px;
+    text-align: center;
+
+    p {
+      padding: 1rem 1.5rem;
+      color: white;
+      margin: 0;
+    }
+
+    .delete_buttons {
+      display: flex;
+      text-transform: uppercase;
+      justify-content: space-around;
+      margin: 0 .5rem;
+
+      .delete_yes {
+        background-color: rgb(162, 162, 162);
+        border: none;
+        color: white;
+        padding: 10px 35px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+
+      }
+
+      .delete_no {
+        border-radius: 10px;
+
+        border: none;
+        color: white;
+        padding: 10px 35px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        background-color: rgb(255, 163, 113);
+      }
+    }
+
+  }
+}

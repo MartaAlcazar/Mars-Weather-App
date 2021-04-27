@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#fafafa" />
+
+    <title>Weather in Mars</title>
+
+    <meta name="description" content="" />
+    <link rel="apple-touch-icon" href="./assets/img/icon.png" />
+    <link rel="icon" href="./assets/img/icon-31.png" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/main.css.map" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+
+    <script src="./app/main.js"></script>
+
+</head>
+
+<body>
+    <div class="app ">
+        <div class="container">
+            <header>
+                <div class="day_status">
+                    <div class="" id="rems_day_info"></div>
+                    <!-- <h1 class="day">
+                        Sunday, April 11
+                    </h1>
+                    <h2 class="weather_status">
+                        Sunny
+                    </h2> -->
+                    <div class="weather_icon">
+                        <img id="weather_icon_id" src="./assets/img/icon-sunny.png" alt="weather icon">
+                    </div>
+                </div>
+
+                <div class="buddy_button">
+
+                    <a href="./buddy_page.html"> <img src="./assets/img/buddy-white-22-29.png" alt="buddy button"></a>
+                </div>
+
+            </header>
+            <main>
+                <div class="air_temperature" id="rems_air_temp">
+                    <!-- <div class="range_air_temperature">
+                        Air: -9º | -77º
+                    </div>
+                    <div class="current_air_temperature">
+                        32º
+                    </div> -->
+                </div>
+                <div class="ground_temperature" id="rems_ground_temp">
+                    <!-- <div class="range_ground_temperature">
+                        Ground: -9º | -77º
+                    </div>
+                    <div class="current_ground_temperature">
+                        82º
+                    </div> -->
+
+                </div>
+                <div class="archive_button">
+                    <div id="save_button_id" class="save_button"> <span id="save_icon" class="iconify"
+                            data-inline="false" data-icon="cil:save"></span>
+                    </div>
+                    <div id="check_button_id" class="save_check hidden_save"> <span id="check_icon" class="iconify"
+                            data-inline="false" data-icon="cil:check"></span>
+                    </div>
+                    <a id="archive_button_id"><span class="iconify" data-inline="false"
+                            data-icon="clarity:history-line"></span></a>
+
+
+                </div>
+            </main>
+            <div id="alert_container_id" class="alert_container hidden_alert">
+                <div class="saved_alert">
+                    <p>Saved!</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="archive_container_hidden archive_overlay">
+        <div class="container_archive">
+
+            <main>
+                <div class="close_header">
+                    <div class="close_button">
+                        <span class="iconify" data-inline="false" data-icon="ion:arrow-back"></span>
+                    </div>
+
+                </div>
+                <div class="todo_archivo">
+                    <div id="todays_archive">
+                        <!--  <div class="archive_component">
+                           <div class="archive_data">
+                        <h1 class="archive_date"></h1>
+                        <img class="archive_weather_status" src="./assets/img/icon-windy.png"></img>
+                    </div>
+                    <div class="archive_temperature">
+                        <p class="air_archive_temp">Air: 90º</p>
+                        <p class="ground_archive_temp">Ground: 68º</p>
+                    </div>
+                    <div class="delete">
+                        <span class="iconify" data-inline="false" data-icon="akar-icons:trash-can"></span>
+                    </div> 
+                        </div> -->
+
+                    </div>
+                    <div class="archivedContainer">
+                    <div class="archive_component">
+                        <div class="archive_data">
+                            <h1 class="archive_date">Sun 3071</h1>
+                            <img class="archive_weather_status" src="./assets/img/icon-sandstorm.png"></img>
+                        </div>
+                        <div class="archive_temperature">
+                            <p class="air_archive_temp">Air: -75º</p>
+                            <p class="ground_archive_temp">Ground: -56º</p>
+                        </div>
+                        <div class="">
+                            <span class="iconify deleteP" data-inline="false" data-icon="akar-icons:trash-can"></span>
+                        </div>
+                    </div>
+                    <div class="archive_component">
+                        <div class="archive_data">
+                            <h1 class="archive_date">Sun 3070</h1>
+                            <img class="archive_weather_status" src="./assets/img/icon-windy.png"></img>
+                        </div>
+                        <div class="archive_temperature">
+                            <p class="air_archive_temp">Air: -72º</p>
+                            <p class="ground_archive_temp">Ground: -68º</p>
+                        </div>
+                        <div class="">
+                            <span class="iconify deleteP" data-inline="false" data-icon="akar-icons:trash-can"></span>
+                        </div>
+                    </div>
+                    <div class="archive_component">
+                        <div class="archive_data">
+                            <h1 class="archive_date">Sun 3068</h1>
+                            <img class="archive_weather_status" src="./assets/img/icon-cloudy.png"></img>
+                        </div>
+                        <div class="archive_temperature">
+                            <p class="air_archive_temp">Air: -63º</p>
+                            <p class="ground_archive_temp">Ground: -40º</p>
+                        </div>
+                        <div class="">
+                            <span class="iconify deleteP" data-inline="false" data-icon="akar-icons:trash-can"></span>
+                        </div>
+                    </div>
+                    <div class="archive_component">
+                        <div class="archive_data">
+                            <h1 class="archive_date">Sun 3066</h1>
+                            <img class="archive_weather_status" src="./assets/img/icon-windy.png"></img>
+                        </div>
+                        <div class="archive_temperature">
+                            <p class="air_archive_temp">Air: -51º</p>
+                            <p class="ground_archive_temp">Ground: -28º</p>
+                        </div>
+                        <div class="">
+                            <span class="iconify deleteP" data-inline="false" data-icon="akar-icons:trash-can"></span>
+                        </div>
+                    </div>
+                    <div class="archive_component">
+                        <div class="archive_data">
+                            <h1 class="archive_date">Sun 3065</h1>
+                            <img class="archive_weather_status" src="./assets/img/icon-sandstorm.png"></img>
+                        </div>
+                        <div class="archive_temperature">
+                            <p class="air_archive_temp">Air: -70º</p>
+                            <p class="ground_archive_temp">Ground: -25º</p>
+                        </div>
+                        <div class="">
+                            <span class="iconify deleteP" data-inline="false" data-icon="akar-icons:trash-can"></span>
+                        </div>
+                    </div>
+                    <div class="archive_component">
+                        <div class="archive_data">
+                            <h1 class="archive_date">Sun 3064</h1>
+                            <img class="archive_weather_status" src="./assets/img/icon-sunny.png"></img>
+                        </div>
+                        <div class="archive_temperature">
+                            <p class="air_archive_temp">Air: -68º</p>
+                            <p class="ground_archive_temp">Ground: 7º</p>
+                        </div>
+                        <div class="">
+                            <span class="iconify deleteP" data-inline="false" data-icon="akar-icons:trash-can"></span>
+                        </div>
+                    </div>
+                    <div class="archive_component">
+                        <div class="archive_data">
+                            <h1 class="archive_date">Sun 3063</h1>
+                            <img class="archive_weather_status" src="./assets/img/icon-windy.png"></img>
+                        </div>
+                        <div class="archive_temperature">
+                            <p class="air_archive_temp">Air: -71º</p>
+                            <p class="ground_archive_temp">Ground: -68º</p>
+                        </div>
+                        <div class="">
+                            <span class="iconify deleteP" data-inline="false" data-icon="akar-icons:trash-can"></span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+
+
+            </main>
+        </div>
+        <div id="alert_delete_id" class="delete_alert_container hidden_delete">
+            <div class="delete_alert">
+                <p>Do you really want to delete this record?</p>
+                <div class="delete_buttons">
+                    <p class="delete_yes">yes</p>
+                    <p class="delete_no">no</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
